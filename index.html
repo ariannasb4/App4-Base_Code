@@ -77,7 +77,10 @@ The main issue I had was trying to figure out how to get the image to translate 
 <style>	
 
 //This area below is used to create how the pages will be displayed
-	
+img, object{
+       max-height:90%;
+       max-width:90%;
+}	
 .body {
      margin: 0em;
 }
@@ -91,8 +94,7 @@ The main issue I had was trying to figure out how to get the image to translate 
     overflow-y: auto;
     z-index: 0;
     background-color: hsl(0,0%,100%);
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4p7d5Ja3C9E0L97yRygpf5XwxBCfkzJCNmg&usqp=CAU" alt="arianna" max-height=90%; max-width=90%;
-}
+
 }
 
   .page:target {
@@ -104,6 +106,8 @@ The main issue I had was trying to figure out how to get the image to translate 
 </style>
 
 <body>
+<img src="html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Are you Anemic?</h1> 
 	<!--This is the header or title of the page before the questions-->
