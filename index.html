@@ -43,24 +43,24 @@ blah, blah, blah, blah
        console.log("This file last modified  " + docMod);
 // If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
 
-	//Underneath are the definitions of the variables that will be used for allergy and cold calculations, both will have a 0 starting value 
+	//Underneath are the definitions of the variables that will be used for anemic and other calculations, both will have a 0 starting value 
         var anemic_count = 0;
         var other_count = 0;
 
-	//This is the function to add 1 to the total value when the button for counting allergy sympotms is clicked.
+	//This is the function to add 1 to the total value when the button for counting anemic sympotms is clicked.
         function anemicAdd(){
             anemic_count = anemic_count + 1;
 
         }
 	
-	//This is the function to add 1 to the total value when the button for counting cold sympotms is clicked.
-        function coldAdd(){
+	//This is the function to add 1 to the total value when the button for counting other sympotms is clicked.
+        function otherAdd(){
             other_count = other_count + 1;
         }
 
 
 	/*This function is to create the equations for the results and to get them displayed on the results page. It also defines the variables to form the equation,
-	which takes the amount of either the allergy value or cold value and divides it by 6 and multipies it by 100 to get the whole number percentage of what the 
+	which takes the amount of either the anemic value or other value and divides it by 5 and multipies it by 100 to get the whole number percentage of what the 
 	person is likely to have */
 	function Results(){
 		var anemicPercent = (anemic_count/5)*100;
