@@ -38,9 +38,9 @@ blah, blah, blah, blah
 <script>
 // The following code lets you know when the file was last modified.
 // This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
-       var docMod = document.lastModified;
+       /*var docMod = document.lastModified;
        alert("This file last modified  " + docMod);
-       console.log("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod); */
 // If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
 
 	//Underneath are the definitions of the variables that will be used for anemic and other calculations, both will have a 0 starting value 
@@ -67,7 +67,7 @@ blah, blah, blah, blah
 		var otherPercent = (other_count/5)*100;
 		var resultText = document.getElementById("Results()");
 		
-		resultText.innerHTML = "Probability you are Anemic allergies=" + anemicPercent + "<br> Probability you are no Anemic=" + otherPercent;
+		resultText.innerHTML = "Probability you are Anemic=" + anemicPercent + "<br> Probability you are not Anemic=" + otherPercent;
 		}
 	
   </script>
