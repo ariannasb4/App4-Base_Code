@@ -6,8 +6,8 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-Author 1
-Author 2
+Timothy Riedel
+Arianna Baradaran
  
 Further Information:
 http://diystream.cns.utexas.edu/
@@ -25,7 +25,225 @@ blah, blah, blah, blah
 
    <head> 
       
-	   PUT YOUR OLD CODE IN HERE
+
+<title>Hello World</title>  
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+
+
+<script>
+// The following code lets you know when the file was last modified.
+// This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
+// If you find the alert box annoying, comment out that line and timestamp will still show up in the debugging console
+
+	//Underneath are the definitions of the variables that will be used for allergy and cold calculations, both will have a 0 starting value 
+        var anemic_count = 0;
+        var other_count = 0;
+
+	//This is the function to add 1 to the total value when the button for counting allergy sympotms is clicked.
+        function anemicAdd(){
+            anemic_count = anemic_count + 1;
+
+        }
+	
+	//This is the function to add 1 to the total value when the button for counting cold sympotms is clicked.
+        function coldAdd(){
+            other_count = other_count + 1;
+        }
+
+
+	/*This function is to create the equations for the results and to get them displayed on the results page. It also defines the variables to form the equation,
+	which takes the amount of either the allergy value or cold value and divides it by 6 and multipies it by 100 to get the whole number percentage of what the 
+	person is likely to have */
+	function Results(){
+		var anemicPercent = (anemic_count/5)*100;
+		var otherPercent = (other_count/5)*100;
+		var resultText = document.getElementById("Results()");
+		
+		resultText.innerHTML = "Probability you are Anemic allergies=" + anemicPercent + "<br> Probability you are no Anemic=" + otherPercent;
+		}
+	
+  </script>
+
+
+
+<style>	
+
+//This area below is used to create how the pages will be displayed
+	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+
+	img, object{https://media.nutrition.org/wp-content/uploads/2017/08/maxresdefault.jpg
+            	max-height:90%;
+        	max-width:90%;
+        	}
+
+</style>
+
+<body>
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Are you Anemic?</h1> 
+	<!--This is the header or title of the page before the questions-->
+</div>
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might be Anemic but aren't sure? Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	<!-- This is the grey button that will take the viewer to the next page, when it is clicked-->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<!--This whole section is just the basic information about the website that is diplayed on the page before the questions-->
+	
+<div class="page" id="one"> <!--This is technically page one and will display question 1 -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+		<!-- Title of page 1 -->
+	</div>
+	
+    	<div id="content" class="w3-container">
+        <p>Do you commonly feel tired or are at a state of fatigue?</p> 
+	<!--Question 1 content-->
+	   
+	<a href="#two"  onclick="anemicAdd();" class="w3-btn w3-black"> YES</a>
+		
+	<a href="#two"  onclick="otherAdd();" class="w3-btn w3-black"> NO</a>
+		
+	<!--Theses are the yes and no buttons. If button yes is clicked then Anemic will be counted in the total, but if no is clicked, then other is added to the final total. 
+	Regardless of which is clicked, the website will go to page two. Also, the class section is just to create how the buttons look, which are black. -->	
+    	</div>
+</div>
+
+<div class="page" id="two"> <!-- This is considered page 2 and will diplay question 2 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you get lighheaded and/or dizzy often?</p>
+		<!--Question 2 content-->	
+		
+	<a href="#three"  onclick="anemicAdd();" class="w3-btn w3-black"> YES</a>
+	
+	<a href="#three"  onclick="otherAdd();" class="w3-btn w3-black"> NO</a>
+
+	<!--Buttons for page two. If button yes is clicked then Anemic will be counted in the total, but if no is clicked, then other is added to the final total. 
+	Regardless of which is clicked, the website will go to page three. Also, the class section is just to create how the buttons look, which are black.-->	
+	</div>
+
+<div class="page" id="three"> <!-- This is considered page 3 and will diplay question 3 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>How often do you get headches?</p>
+		<!--Question 3 content-->
+	
+	<a href="#four"  onclick="otherAdd();" class="w3-btn w3-black"> Rarely</a>
+								   
+	<a href="#four"  onclick="anemicAdd();" class="w3-btn w3-black"> Often</a>
+		
+	<!--Buttons for page three. If button Rarely is clicked then other will be counted in the total, but if Often is clicked, then Anemic is added to the final total. 
+	Regardless of which is clicked, the website will go to page four. Also, the class section is just to create how the buttons look, which are black.-->
+	</div>
+	
+<div class="page" id="four"> <!-- This is considered page 4 and will diplay question 4 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you often experience having a fast heart rate or palpitations?</p>
+		<!--Question 4 content-->
+		
+	<a href="#five"  onclick="otherAdd();" class="w3-btn w3-pink"> NO</a>	
+	<a href="#five"  onclick="AnemicAdd();" class="w3-btn w3-pink"> Yes</a>
+		
+	<!--Buttons for page four. If button yes is clicked then Anemic will be counted in the total, but if no is clicked, then other is added to the final total. 
+	Regardless of which is clicked, the website will go to next page. Also, the class section is just to create how the buttons look, which are black.-->
+	</div>
+	
+<div class="page" id="five"> <!-- This is considered page 5 and will diplay question 5 -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Is it common for you to have shortness of breath?</p>
+		<!--Question 5 content-->
+		
+	<a href="#six"  onclick="anemicAdd();" class="w3-btn w3-black"> YES</a>	
+	<a href="#six"  onclick="otherAdd();" class="w3-btn w3-black"> NO</a>
+		
+		
+	<!--Buttons for page five. If the button yes is clicked then Anemic will be counted in the total, but if no is clicked, then other is added to the final total. 
+	Regardless of which is clicked, the website will go to next page. Also, the class section is just to create how the buttons look, which are black.-->
+	</div>
+	
+	
+<div class="page" id="six"> <!-- This is considered page 6 and will diplay results button -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+		<!--Title of the page 6-->
+	</div>
+	
+	<div id="content" class="w3-container">
+
+			
+	<a href="#seven"  onclick="Results();" class="w3-btn w3-black"> Click here for results...</a>
+	<!-- This is the results button on page 7 that will direct the viewer to page 8 where there results will be displayed. The class section is there 
+	to create how the button looks, which is black.-->
+		
+	</div>
+
+<div class="page" id="seven"> <!-- This is considered page 7 and will diplay the results -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Your Results</h1>
+		<!-- Title of the final page, page 7-->
+	</div>
+	
+	
+	<div id="Results()" class="w3-container">
+	<!-- This will use the Results function equation and variables from the script portion of the code to display the viewer's results and give the 
+	percentages of whether someone is Anemic or not, based on their survey answers.-->
+	
+	
+	</div>
+
+
+</div>	
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p> 
+	<!-- This is what is displayed at the bottom of page 7, the results button page-->
+</footer>
+
 	   
    </body>
 </html>
